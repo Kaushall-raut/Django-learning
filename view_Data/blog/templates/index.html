@@ -1,11 +1,35 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>home Page</title>
-</head>
-<body>
-    <h1>Hello Django</h1>
-</body>
+  </head>
+  <body>
+    <h1>Displaying Database records</h1>
+
+    {% if data %}
+    <table border="2">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for students in data %}
+
+        <tr>
+          <td>{{students.id}}</td>
+          <td>{{students}}</td>
+          <td>{{students.age}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <h2>No data to display</h2>
+    {% endif %}
+  </body>
 </html>
