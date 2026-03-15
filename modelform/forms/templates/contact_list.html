@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact list</title>
+</head>
+<body>
+    <h2>Contact list details </h2>
+
+    <a href="/">add students</a>
+
+        <ul>
+            
+            {% for values in contacts %}
+                <li>
+
+                    <a href='details/{{values.id}}'>{{values.name}}</a>
+                </li>
+            {% endfor %}
+                
+        </ul>
+</body>
+</html>
