@@ -5,5 +5,6 @@ urlpatterns = [
   
     path('',views.contact),
     path('list/',views.contact_list),
-    path('list/details/<int:id>',views.contact_details),
+    path('list/details/<int:id>',views.contact_details), 
+    path('list/update/<int:id>',views.contact_update,name='contact_update'),
 ]
