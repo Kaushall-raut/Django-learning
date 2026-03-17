@@ -33,3 +33,11 @@ def contact_update(request, id):
         form = Contact(instance=contact)
 
     return render(request, 'index.html', {'form': form})
+
+def contact_delete(request,id):
+    contact=get_object_or_404(ContactForm,id=id)
+    if request.method=='POST':
+       contact.delete()
+    #    contact.save()
+       return redirect('/list')
+    return render(request,'delete.html',{'form':contact})

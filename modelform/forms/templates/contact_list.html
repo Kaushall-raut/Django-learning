@@ -15,7 +15,8 @@
             {% for values in contacts %}
                 <li>
                     <a href='details/{{values.id}}'>{{values.name}}</a> |
-                    <a href="{% url 'contact:contact_update' values.id %}">update</a>
+                    <a href="{% url 'contact:contact_update' values.id %}">update</a> |
+                    <a href="{% url 'contact:contact_delete' values.id %}">Delete</a>
                 </li>
             {% endfor %}
                 
