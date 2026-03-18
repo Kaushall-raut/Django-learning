@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>messages</title>
+  </head>
+  <body>
+    <h1>Messages in django</h1>
+
+    {% if messages %}
+    <ul>
+      {% for mess in messages %}
+      <li>{{mess}}</li>
+      <li>{{mess.tags}}</li>
+      {% endfor %}
+    </ul>
+
+    {% endif %}
+  </body>
+</html>
