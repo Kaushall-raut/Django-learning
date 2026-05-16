@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+
+<h2>view media</h2>
+<ul>
+  {% for media in profiles %}
+  <li>{{media.name}} <br>
+    <img src="{{media.image.url}}" width="200p">
+</li>
+  {% endfor %}
+</ul>
+
+{% endblock content %}
