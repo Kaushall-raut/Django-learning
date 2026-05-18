@@ -1,0 +1,42 @@
+1 <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PAGINATION</title>
+  </head>
+  <body>
+    <h1>pagination in django</h1>
+    <ul>
+      {% for page in pages %}
+      <li>{{page.title}}</li>
+      {% endfor %}
+    </ul>
+    <div>
+        
+        {% if pages.has_previous %}
+            <a href="?page=1">First</a>
+            <a href="?page={{pages.previous_page_number}}">Previous</a>
+        {% endif %}
+            
+            {% for page in pages.paginator.page_range %}
+                
+                {% if pages.number == page %}
+                    <span>
+                        {{page}}
+                    </span>
+                {% else %}
+                <a href="?page={{page}}">{{page}}</a>
+                {% endif %}
+                    
+            {% endfor %}
+            
+            {% if page.has_next  %}
+                <a href="?page={{pages.next_page_number}}">Next</a>
+                <a href="?page={{pages.paginator.num_pages}}">Last</a>
+            {% endif %}
+                
+                
+    </div>
+  </body>
+</html>
