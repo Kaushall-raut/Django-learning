@@ -1,0 +1,6 @@
+{% extends 'base.html' %} {% block content %} {{post.title}} {{post.content}}
+<br>
+<a href="{% url 'PostListView' %}">Back to home</a>
+<a href="{% url 'PostEditView' post.id %}">Edit Post</a>
+<a href="{% url 'PostDeleteView' post.id %}">Delete Post</a>
+{% endblock content %}
