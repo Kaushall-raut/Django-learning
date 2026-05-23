@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog search and filter</title>
+  </head>
+  <body>
+    <h1>Search and filter in Django</h1>
+
+    <form method="get">
+      
+      <input type="text" name="q" id="q" value="{{query}}" />
+      <select name="category" id="category">
+        <option value="All">all</option>
+        <option value="technology" {% if category == "technology" %} selected {% endif %}>
+          tech
+        </option>
+        <option
+          value="esports"
+          {%
+          if
+          category == "esports"
+          %}
+          selected
+          {%
+          endif
+          %}
+        >
+          esports
+        </option>
+      </select>
+      <button type="submit">submit</button>
+    </form>
+    <ul>
+      {% for result in posts %}
+      <li>
+        <h2>{{result.title}}</h2>
+        <p>{{result.content}}</p>
+        <p><span>category</span>{{result.category}}</p>
+      </li>
+      {% empty %}
+      <li>
+        <h2>no result found</h2>
+      </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
