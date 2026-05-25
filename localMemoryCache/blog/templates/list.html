@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>In memory cache</title>
+  </head>
+  <body>
+    <h1>Yt users</h1>
+    <table border="1">
+      <tr>
+        <th>name</th>
+        <th>Email</th>
+        <th>Subscriber</th>
+      </tr>
+
+      {% for values in users %}
+      <tr>
+        <td>{{values.name}}</td>
+        <td>{{values.email}}</td>
+        <td>{{values.subscribers}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </body>
+</html>
